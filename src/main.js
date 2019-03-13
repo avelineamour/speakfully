@@ -12,10 +12,6 @@ const colors = {
   a6a1d4: "lavender-ish"
 }
 
-// const valuesArray = Object.values(colors)
-// const randomValuesIndex = Math.floor(Math.random() * valuesArray.length)
-
-
 function randomColor() {
   const colorsArray = Object.keys(colors)
   const randomColorsIndex = Math.floor(Math.random() * colorsArray.length)
@@ -46,6 +42,6 @@ save.addEventListener("click", function () {
     obj[i] = value
     i++
   })
-  console.log(obj)
+
   tileValues.innerHTML = JSON.stringify(obj)
 })
