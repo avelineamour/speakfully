@@ -1,0 +1,95 @@
+$turquoise: #91D5D6;
+$orange: #E8674C;
+
+body {
+  font-family: "Avenir Next";
+  line-height: 2;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: $orange;
+  margin: 3rem 0 3rem 0;
+  padding: 0;
+}
+
+.directions {
+  padding: 2rem;
+  font-size: .8rem;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  // height: 100vh;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-gap: 2px;
+  width: 500px;
+  height: 500px;
+  margin: 1rem 0;
+}
+
+.item {
+  border: solid 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background: white;
+}
+
+.buttons {
+  width: 500px;
+  margin: 1rem 0;
+}
+
+button {
+  width: 49%;
+  height: 50px;
+  background: $turquoise;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  outline: none;
+}
+
+
+pre {
+  color: rgba(0, 0, 0, 0.7);
+  width: 500px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+
+
+
+@media only screen and (max-width: 520px) {
+  .color-grid {
+    width: 300px;
+    height: 300px;
+  }
+
+  .buttons {
+    width: 300px;
+  }
+
+  button {
+    font-size: .8rem;
+  }
+
+  pre {
+    width: 300px;
+    white-space: pre-wrap;
+  }
+}
