@@ -6,13 +6,11 @@ var clear = document.querySelector("button.clear");
 var tileValues = document.querySelector("pre.tile-values");
 var colors = {
   d3e7ff: "light blue",
-  ff92f7: "hot pink",
+  ff92f7: "fuschia",
   dc7d99: "salmon",
   fff9b5: "pale yellow",
-  d3ffdc: "aqua",
-  a6a1d4: "lavender-ish" // const valuesArray = Object.values(colors)
-  // const randomValuesIndex = Math.floor(Math.random() * valuesArray.length)
-
+  d3ffdc: "aquamarine",
+  a6a1d4: "deep lavender"
 };
 
 function randomColor() {
@@ -25,14 +23,15 @@ tiles.forEach(function (x) {
   return x.addEventListener("click", function () {
     var color = randomColor();
     this.style.background = "#".concat(color);
+    this.style.color = "rgba(0, 0, 0, 0.3)";
     var value = colors[color];
-    this.dataset.value = value;
+    this.innerText = value;
   });
 });
 clear.addEventListener("click", function () {
   tiles.forEach(function (x) {
     x.style.background = "white";
-    x.dataset.value = "";
+    x.innerText = "";
   });
   tileValues.innerHTML = "";
 });
@@ -44,6 +43,5 @@ save.addEventListener("click", function () {
     obj[i] = value;
     i++;
   });
-  console.log(obj);
   tileValues.innerHTML = JSON.stringify(obj);
 });

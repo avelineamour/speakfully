@@ -5,11 +5,11 @@ const tileValues = document.querySelector("pre.tile-values")
 
 const colors = {
   d3e7ff: "light blue",
-  ff92f7: "hot pink",
+  ff92f7: "fuschia",
   dc7d99: "salmon",
   fff9b5: "pale yellow",
-  d3ffdc: "aqua",
-  a6a1d4: "lavender-ish"
+  d3ffdc: "aquamarine",
+  a6a1d4: "deep lavender"
 }
 
 function randomColor() {
@@ -21,14 +21,15 @@ function randomColor() {
 tiles.forEach(x => x.addEventListener("click", function () {
   const color = randomColor()
   this.style.background = `#${color}`
+  this.style.color = "rgba(0, 0, 0, 0.3)"
   const value = colors[color]
-  this.dataset.value = value
+  this.innerText = value
 }))
 
 clear.addEventListener("click", function () {
   tiles.forEach(x => {
     x.style.background = "white"
-    x.dataset.value = ""
+    x.innerText = ""
   })
   tileValues.innerHTML = ""
 })
